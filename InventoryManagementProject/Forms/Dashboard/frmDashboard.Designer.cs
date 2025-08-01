@@ -65,13 +65,13 @@
             btnUsers = new Guna.UI2.WinForms.Guna2Button();
             panelSidebar = new Panel();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             btnProducts = new Guna.UI2.WinForms.Guna2Button();
             btnTransactions = new Guna.UI2.WinForms.Guna2Button();
             btnSales = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
             btnSettings = new Guna.UI2.WinForms.Guna2Button();
             form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
-            pictureBox1 = new PictureBox();
             panelHeader.SuspendLayout();
             panelSidebar.SuspendLayout();
             panel2.SuspendLayout();
@@ -266,6 +266,16 @@
             panel2.Size = new Size(196, 132);
             panel2.TabIndex = 14;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(196, 132);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // btnProducts
             // 
             btnProducts.CustomizableEdges = customizableEdges17;
@@ -359,16 +369,6 @@
             form.DockIndicatorTransparencyValue = 0.6D;
             form.TransparentWhileDrag = true;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(196, 132);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -382,6 +382,7 @@
             Name = "frmDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDashboard";
+            Load += frmDashboard_Load;
             panelHeader.ResumeLayout(false);
             panelSidebar.ResumeLayout(false);
             panel2.ResumeLayout(false);

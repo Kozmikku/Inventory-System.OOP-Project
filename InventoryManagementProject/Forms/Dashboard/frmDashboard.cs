@@ -63,5 +63,10 @@ namespace InventoryManagementProject.Forms.Dashboard
         {
             OpenFormInPanel(new frmSupplier());
         }
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new frmHome());
+        }
     }
 }

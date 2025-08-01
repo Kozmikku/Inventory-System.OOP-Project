@@ -54,5 +54,25 @@ namespace InventoryManagementProject.Helpers
                 await firebase.Child("Products").Child(key).DeleteAsync();
             }
         }
+        public async Task UpdateProduct(Product product)
+        {
+            var toUpdate = (await firebase
+                .Child("Products")
+                .OnceAsync<Product>())
+                .FirstOrDefault(p => p.Object.SKU == product.SKU);
+
+            if (toUpdate != null)
+            {
+                await firebase
+                    .Child("Products")
+                    .Child(toUpdate.Key)
+                    .PutAsync(product);
+            }
+        }
+        public async Task<Product> GetProductBySKU(string sku)
+        {
+            var allProducts = await GetAllProducts();
+            return allProducts.FirstOrDefault(p => p.SKU == sku);
+        }
     }
 }

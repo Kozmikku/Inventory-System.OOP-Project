@@ -46,7 +46,7 @@
             dgvProducts = new DataGridView();
             panel2 = new Panel();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnAdd = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
@@ -83,7 +83,6 @@
             // 
             // dgvProducts
             // 
-            dgvProducts.AutoGenerateColumns = false;
             dgvProducts.AllowUserToAddRows = false;
             dgvProducts.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
@@ -128,7 +127,7 @@
             // panel2
             // 
             panel2.Controls.Add(btnRefresh);
-            panel2.Controls.Add(guna2Button1);
+            panel2.Controls.Add(btnEdit);
             panel2.Controls.Add(btnAdd);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 556);
@@ -154,23 +153,23 @@
             btnRefresh.TabIndex = 3;
             btnRefresh.Text = "Refresh";
             // 
-            // guna2Button1
+            // btnEdit
             // 
-            guna2Button1.BorderRadius = 20;
-            guna2Button1.CustomizableEdges = customizableEdges3;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(128, 128, 255);
-            guna2Button1.Font = new Font("Roboto Slab", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(194, 13);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button1.Size = new Size(127, 45);
-            guna2Button1.TabIndex = 2;
-            guna2Button1.Text = "Update Products";
+            btnEdit.BorderRadius = 20;
+            btnEdit.CustomizableEdges = customizableEdges3;
+            btnEdit.DisabledState.BorderColor = Color.DarkGray;
+            btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEdit.FillColor = Color.FromArgb(128, 128, 255);
+            btnEdit.Font = new Font("Roboto Slab", 9F);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(194, 13);
+            btnEdit.Name = "btnEdit";
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEdit.Size = new Size(127, 45);
+            btnEdit.TabIndex = 2;
+            btnEdit.Text = "Edit Products";
             // 
             // btnAdd
             // 
@@ -217,7 +216,7 @@
         private Label label1;
         private Panel panel2;
         private DataGridView dgvProducts;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }

@@ -19,5 +19,6 @@ namespace InventoryManagementProject.Models
         public string Supplier { get; set; }
         public string Description { get; set; }
         public string ImageFile { get; set; } // File path for the image
+        public int ReorderLevel { get; set; }
     }
 }

@@ -15,9 +15,9 @@ using System.Xml.Linq;
 
 namespace InventoryManagementProject.Forms.Inventory
 {
-    public partial class frmAddEditProduct : Form
+    public partial class frmAddProduct : Form
     {
-        public frmAddEditProduct()
+        public frmAddProduct()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace InventoryManagementProject.Forms.Inventory
                 SellPrice = double.Parse(txtSellPrice.Text),
                 Supplier = cmbSupplier.Text,
                 Description = txtDescription.Text,
-                ImageFile = txtImageFile.Text 
+                ImageFile = txtImageFile.Text
             };
 
             var helper = new FirebaseHelper();
@@ -44,7 +44,7 @@ namespace InventoryManagementProject.Forms.Inventory
             this.Close();
         }
 
-        private async void btnUpload_Click(object sender, EventArgs e)
+        private void btnUpload_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -65,6 +65,11 @@ namespace InventoryManagementProject.Forms.Inventory
                     picProduct.Image = Image.FromFile(newFilePath); // load for preview
                 }
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

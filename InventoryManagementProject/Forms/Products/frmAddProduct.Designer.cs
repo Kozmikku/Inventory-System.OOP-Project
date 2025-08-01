@@ -1,6 +1,6 @@
 ﻿namespace InventoryManagementProject.Forms.Inventory
 {
-    partial class frmAddEditProduct
+    partial class frmAddProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -166,6 +166,7 @@
             btnCancel.Size = new Size(78, 26);
             btnCancel.TabIndex = 21;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
@@ -226,6 +227,7 @@
             // 
             // picProduct
             // 
+            picProduct.BorderStyle = BorderStyle.FixedSingle;
             picProduct.Location = new Point(487, 54);
             picProduct.Name = "picProduct";
             picProduct.Size = new Size(252, 217);
@@ -470,7 +472,7 @@
             label1.TabIndex = 0;
             label1.Text = "Product Name:";
             // 
-            // frmAddEditProduct
+            // frmAddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -478,7 +480,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmAddEditProduct";
+            Name = "frmAddProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmProduct";
             panel1.ResumeLayout(false);

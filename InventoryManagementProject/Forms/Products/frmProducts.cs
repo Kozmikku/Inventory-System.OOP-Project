@@ -72,7 +72,7 @@ namespace InventoryManagementProject.Forms.Categories
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            using (frmAddEditProduct addForm = new frmAddEditProduct())
+            using (frmAddProduct addForm = new frmAddProduct())
             {
                 if (addForm.ShowDialog() == DialogResult.OK)
                 {
@@ -86,12 +86,12 @@ namespace InventoryManagementProject.Forms.Categories
         }
         private void AddDeleteButtonToGrid()
         {
-                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-                btnDelete.Name = "btnDelete";
-                btnDelete.HeaderText = "Delete";
-                btnDelete.Text = "🗑️ Delete";
-                btnDelete.UseColumnTextForButtonValue = true;
-                dgvProducts.Columns.Add(btnDelete);
+            DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+            btnDelete.Name = "btnDelete";
+            btnDelete.HeaderText = "Delete";
+            btnDelete.Text = "🗑️ Delete";
+            btnDelete.UseColumnTextForButtonValue = true;
+            dgvProducts.Columns.Add(btnDelete);
         }
         private async void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
