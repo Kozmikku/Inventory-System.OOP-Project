@@ -56,7 +56,7 @@
             btnHome = new Guna.UI2.WinForms.Guna2Button();
             btnInventory = new Guna.UI2.WinForms.Guna2Button();
             btnReports = new Guna.UI2.WinForms.Guna2Button();
-            btnUsers = new Guna.UI2.WinForms.Guna2Button();
+            btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             panelSidebar = new Panel();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
@@ -177,24 +177,25 @@
             btnReports.TextAlign = HorizontalAlignment.Right;
             btnReports.Click += btnReports_Click;
             // 
-            // btnUsers
+            // btnLogOut
             // 
-            btnUsers.CustomizableEdges = customizableEdges11;
-            btnUsers.DisabledState.BorderColor = Color.DarkGray;
-            btnUsers.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnUsers.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnUsers.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnUsers.Dock = DockStyle.Bottom;
-            btnUsers.FillColor = Color.FromArgb(128, 128, 255);
-            btnUsers.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
-            btnUsers.ForeColor = Color.White;
-            btnUsers.Location = new Point(0, 569);
-            btnUsers.Name = "btnUsers";
-            btnUsers.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnUsers.Size = new Size(196, 45);
-            btnUsers.TabIndex = 9;
-            btnUsers.Text = "Users";
-            btnUsers.TextAlign = HorizontalAlignment.Right;
+            btnLogOut.CustomizableEdges = customizableEdges11;
+            btnLogOut.DisabledState.BorderColor = Color.DarkGray;
+            btnLogOut.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLogOut.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogOut.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLogOut.Dock = DockStyle.Bottom;
+            btnLogOut.FillColor = Color.FromArgb(128, 128, 255);
+            btnLogOut.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
+            btnLogOut.ForeColor = Color.White;
+            btnLogOut.Location = new Point(0, 614);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnLogOut.Size = new Size(196, 45);
+            btnLogOut.TabIndex = 9;
+            btnLogOut.Text = "Log Out";
+            btnLogOut.TextAlign = HorizontalAlignment.Right;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // panelSidebar
             // 
@@ -208,8 +209,8 @@
             panelSidebar.Controls.Add(btnSales);
             panelSidebar.Controls.Add(btnReports);
             panelSidebar.Controls.Add(panel1);
-            panelSidebar.Controls.Add(btnUsers);
             panelSidebar.Controls.Add(btnSettings);
+            panelSidebar.Controls.Add(btnLogOut);
             panelSidebar.Dock = DockStyle.Left;
             panelSidebar.ForeColor = SystemColors.ActiveCaptionText;
             panelSidebar.Location = new Point(0, 0);
@@ -315,7 +316,7 @@
             btnSettings.FillColor = Color.FromArgb(128, 128, 255);
             btnSettings.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnSettings.ForeColor = Color.White;
-            btnSettings.Location = new Point(0, 614);
+            btnSettings.Location = new Point(0, 569);
             btnSettings.Name = "btnSettings";
             btnSettings.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnSettings.Size = new Size(196, 45);
@@ -361,7 +362,7 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnInventory;
         private Guna.UI2.WinForms.Guna2Button btnReports;
-        private Guna.UI2.WinForms.Guna2Button btnUsers;
+        private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Panel panelSidebar;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
         private Guna.UI2.WinForms.Guna2Button btnTransactions;

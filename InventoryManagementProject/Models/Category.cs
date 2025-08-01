@@ -12,11 +12,12 @@ namespace InventoryManagementProject.Models
             {
                 return new List<string>
             {
-                "Nike",
-                "Adidas",
-                "Puma",
-                "New Balance",
-                "Converse"
+                "Eletronics",
+                "Toys",
+                "Home Appliances",
+                "Furniture",
+                "Office Supplies",
+                "Stationery",
             };
             }
         

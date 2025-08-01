@@ -1,4 +1,5 @@
-﻿using InventoryManagementProject.Forms.Categories;
+﻿using InventoryManagementProject.Forms.Authentication;
+using InventoryManagementProject.Forms.Categories;
 using InventoryManagementProject.Forms.Home;
 using InventoryManagementProject.Forms.Inventory;
 using InventoryManagementProject.Forms.Reports;
@@ -72,6 +73,17 @@ namespace InventoryManagementProject.Forms.Dashboard
         private void btnReports_Click(object sender, EventArgs e)
         {
             OpenFormInPanel(new frmReport());
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to Log Out", "Confirm Exit",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                frmLogin login = new frmLogin();
+                login.Show();
+            }
         }
     }
 }

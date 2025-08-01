@@ -166,5 +166,14 @@ namespace InventoryManagementProject.Helpers
                 .Child(reportID)
                 .DeleteAsync();
         }
+        public async Task<List<Transaction>> GetAllSales()
+        {
+            var sales = await firebase
+                .Child("Sales")
+                .OnceAsync<Transaction>();
+
+            return sales.Select(s => s.Object).ToList();
+        }
+
     }
 }

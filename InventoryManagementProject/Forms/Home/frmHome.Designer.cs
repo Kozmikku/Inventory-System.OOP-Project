@@ -37,17 +37,17 @@
             label5 = new Label();
             panel6 = new Panel();
             label4 = new Label();
-            panel5 = new Panel();
-            label3 = new Label();
             panel4 = new Panel();
             label2 = new Label();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
+            lblProduct = new Label();
+            lblTransactions = new Label();
+            lblSales = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
-            panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -77,16 +77,15 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(20, 20);
             label1.Name = "label1";
-            label1.Size = new Size(149, 36);
+            label1.Size = new Size(142, 36);
             label1.TabIndex = 5;
-            label1.Text = "Welcome,";
+            label1.Text = "Welcome";
             // 
             // panel2
             // 
             panel2.BackColor = SystemColors.Control;
             panel2.Controls.Add(panel7);
             panel2.Controls.Add(panel6);
-            panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel4);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 80);
@@ -97,11 +96,12 @@
             // panel7
             // 
             panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(lblSales);
             panel7.Controls.Add(label5);
             panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(787, 0);
+            panel7.Location = new Point(550, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(249, 186);
+            panel7.Size = new Size(486, 186);
             panel7.TabIndex = 3;
             // 
             // label5
@@ -109,18 +109,19 @@
             label5.AutoSize = true;
             label5.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(19, 19);
+            label5.Location = new Point(28, 18);
             label5.Name = "label5";
-            label5.Size = new Size(167, 36);
+            label5.Size = new Size(291, 36);
             label5.TabIndex = 9;
-            label5.Text = "Total Sales";
+            label5.Text = "Total Sales Revenue";
             // 
             // panel6
             // 
             panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(lblTransactions);
             panel6.Controls.Add(label4);
             panel6.Dock = DockStyle.Left;
-            panel6.Location = new Point(478, 0);
+            panel6.Location = new Point(241, 0);
             panel6.Name = "panel6";
             panel6.Size = new Size(309, 186);
             panel6.TabIndex = 2;
@@ -130,36 +131,16 @@
             label4.AutoSize = true;
             label4.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(6, 19);
+            label4.Location = new Point(17, 18);
             label4.Name = "label4";
             label4.Size = new Size(275, 36);
             label4.TabIndex = 8;
             label4.Text = "Total Transactions";
             // 
-            // panel5
-            // 
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(label3);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(241, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(237, 186);
-            panel5.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(6, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(226, 36);
-            label3.TabIndex = 7;
-            label3.Text = "Total Suppliers";
-            // 
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(lblProduct);
             panel4.Controls.Add(label2);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 0);
@@ -172,7 +153,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(21, 19);
+            label2.Location = new Point(11, 19);
             label2.Name = "label2";
             label2.Size = new Size(217, 36);
             label2.TabIndex = 6;
@@ -196,6 +177,39 @@
             dataGridView1.Size = new Size(1036, 360);
             dataGridView1.TabIndex = 0;
             // 
+            // lblProduct
+            // 
+            lblProduct.AutoSize = true;
+            lblProduct.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProduct.ForeColor = SystemColors.ActiveCaptionText;
+            lblProduct.Location = new Point(11, 74);
+            lblProduct.Name = "lblProduct";
+            lblProduct.Size = new Size(217, 36);
+            lblProduct.TabIndex = 7;
+            lblProduct.Text = "Total Products";
+            // 
+            // lblTransactions
+            // 
+            lblTransactions.AutoSize = true;
+            lblTransactions.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTransactions.ForeColor = SystemColors.ActiveCaptionText;
+            lblTransactions.Location = new Point(17, 74);
+            lblTransactions.Name = "lblTransactions";
+            lblTransactions.Size = new Size(217, 36);
+            lblTransactions.TabIndex = 8;
+            lblTransactions.Text = "Total Products";
+            // 
+            // lblSales
+            // 
+            lblSales.AutoSize = true;
+            lblSales.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSales.ForeColor = SystemColors.ActiveCaptionText;
+            lblSales.Location = new Point(28, 74);
+            lblSales.Name = "lblSales";
+            lblSales.Size = new Size(217, 36);
+            lblSales.TabIndex = 9;
+            lblSales.Text = "Total Products";
+            // 
             // frmHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -214,8 +228,6 @@
             panel7.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
@@ -234,10 +246,11 @@
         private Label label5;
         private Panel panel6;
         private Label label4;
-        private Panel panel5;
-        private Label label3;
         private Panel panel4;
         private Label label2;
         private DataGridView dataGridView1;
+        private Label lblSales;
+        private Label lblTransactions;
+        private Label lblProduct;
     }
 }
