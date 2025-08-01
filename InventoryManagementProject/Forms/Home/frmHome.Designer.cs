@@ -33,23 +33,23 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
             panel7 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
+            panel6 = new Panel();
+            label4 = new Label();
+            panel5 = new Panel();
+            label3 = new Label();
+            panel4 = new Panel();
+            label2 = new Label();
+            panel3 = new Panel();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
             panel7.SuspendLayout();
+            panel6.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -94,44 +94,9 @@
             panel2.Size = new Size(1036, 186);
             panel2.TabIndex = 2;
             // 
-            // panel3
-            // 
-            panel3.Controls.Add(dataGridView1);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 266);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1036, 360);
-            panel3.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(label2);
-            panel4.Dock = DockStyle.Left;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(241, 186);
-            panel4.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(label3);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(241, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(237, 186);
-            panel5.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(label4);
-            panel6.Dock = DockStyle.Left;
-            panel6.Location = new Point(478, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(309, 186);
-            panel6.TabIndex = 2;
-            // 
             // panel7
             // 
+            panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(label5);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(787, 0);
@@ -139,27 +104,26 @@
             panel7.Size = new Size(249, 186);
             panel7.TabIndex = 3;
             // 
-            // label2
+            // label5
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(21, 19);
-            label2.Name = "label2";
-            label2.Size = new Size(217, 36);
-            label2.TabIndex = 6;
-            label2.Text = "Total Products";
+            label5.AutoSize = true;
+            label5.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(19, 19);
+            label5.Name = "label5";
+            label5.Size = new Size(167, 36);
+            label5.TabIndex = 9;
+            label5.Text = "Total Sales";
             // 
-            // label3
+            // panel6
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(6, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(226, 36);
-            label3.TabIndex = 7;
-            label3.Text = "Total Suppliers";
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(label4);
+            panel6.Dock = DockStyle.Left;
+            panel6.Location = new Point(478, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(309, 186);
+            panel6.TabIndex = 2;
             // 
             // label4
             // 
@@ -172,16 +136,56 @@
             label4.TabIndex = 8;
             label4.Text = "Total Transactions";
             // 
-            // label5
+            // panel5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(19, 19);
-            label5.Name = "label5";
-            label5.Size = new Size(167, 36);
-            label5.TabIndex = 9;
-            label5.Text = "Total Sales";
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(label3);
+            panel5.Dock = DockStyle.Left;
+            panel5.Location = new Point(241, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(237, 186);
+            panel5.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(6, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(226, 36);
+            label3.TabIndex = 7;
+            label3.Text = "Total Suppliers";
+            // 
+            // panel4
+            // 
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(label2);
+            panel4.Dock = DockStyle.Left;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(241, 186);
+            panel4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Roboto Slab Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(21, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(217, 36);
+            label2.TabIndex = 6;
+            label2.Text = "Total Products";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(dataGridView1);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 266);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1036, 360);
+            panel3.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -206,15 +210,15 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

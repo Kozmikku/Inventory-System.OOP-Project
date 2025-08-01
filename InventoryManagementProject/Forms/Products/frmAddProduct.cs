@@ -20,13 +20,41 @@ namespace InventoryManagementProject.Forms.Inventory
         public frmAddProduct()
         {
             InitializeComponent();
+            txtProductID.Text = Guid.NewGuid().ToString().Substring(0, 8);
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtProductName.Text) ||
+            string.IsNullOrWhiteSpace(cmbCategory.Text) ||
+            string.IsNullOrWhiteSpace(cmbSupplier.Text) ||
+            string.IsNullOrWhiteSpace(txtCostPrice.Text) ||
+            string.IsNullOrWhiteSpace(txtSellPrice.Text))
+            {
+                MessageBox.Show("Please fill in all required fields.", "Missing Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(numQuantity.Text, out int quantity))
+            {
+                MessageBox.Show("Please enter a valid number for quantity.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!double.TryParse(txtCostPrice.Text, out double costPrice))
+            {
+                MessageBox.Show("Please enter a valid number for cost price.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!double.TryParse(txtSellPrice.Text, out double sellPrice))
+            {
+                MessageBox.Show("Please enter a valid number for sell price.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var product = new Product
             {
-                SKU = Guid.NewGuid().ToString().Substring(0, 8), // simple SKU gen
+                ProductID = txtProductID.Text,
                 ProductName = txtProductName.Text,
                 Category = cmbCategory.Text,
                 Quantity = int.Parse(numQuantity.Text),
@@ -70,6 +98,12 @@ namespace InventoryManagementProject.Forms.Inventory
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmAddProduct_Load(object sender, EventArgs e)
+        {
+            cmbCategory.DataSource = Category.GetCategories();
+            cmbSupplier.DataSource = Supplier.GetSuppliers();
         }
     }
 }

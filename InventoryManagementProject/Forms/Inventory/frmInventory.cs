@@ -1,6 +1,8 @@
-﻿using InventoryManagementProject.Helpers;
-using Firebase.Database;
+﻿using Firebase.Database;
 using Firebase.Database.Query;
+using InventoryManagementProject.Helpers;
+using InventoryManagementProject.Models;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,69 +17,98 @@ namespace InventoryManagementProject.Forms.Inventory
 {
     public partial class frmInventory : Form
     {
+        private FirebaseHelper helper = new FirebaseHelper();
+        private List<Product> allProducts = new List<Product>();
+
         public frmInventory()
         {
             InitializeComponent();
         }
-        private async Task LoadInventoryGrid()
-        {
-            var helper = new FirebaseHelper();
-            var products = await helper.GetAllProducts();
 
-            var inventoryData = products.Select(p => new
-            {
-                p.SKU,
-                p.ProductName,
-                p.Category,
-                p.Quantity,
-                p.ReorderLevel,
-                Status = p.Quantity == 0 ? "❌ Out of Stock"
-                        : p.Quantity <= p.ReorderLevel ? "⚠️ Low Stock"
-                        : "✅ Normal"
-            }).ToList();
-
-            dgvInventory.DataSource = null;
-            dgvInventory.DataSource = inventoryData;
-
-            StyleInventoryGrid(); // optional
-        }
-        private void StyleInventoryGrid()
-        {
-            foreach (DataGridViewRow row in dgvInventory.Rows)
-            {
-                var status = row.Cells["Status"].Value?.ToString();
-
-                if (status == "❌ Out of Stock")
-                    row.DefaultCellStyle.BackColor = Color.LightPink;
-                else if (status == "⚠️ Low Stock")
-                    row.DefaultCellStyle.BackColor = Color.LightYellow;
-                else if (status == "✅ Normal")
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
-            }
-        }
         private async void frmInventory_Load(object sender, EventArgs e)
         {
-            await LoadInventoryGrid();
+            allProducts = await helper.GetAllProducts();
+            LoadFilterOptions();
+            LoadInventoryGrid(allProducts);
         }
 
-        private async void btnAdjustStock_Click(object sender, EventArgs e)
+        private void LoadFilterOptions()
         {
-            if (dgvInventory.CurrentRow?.Cells["SKU"].Value != null)
+            var categories = Category.GetCategories(); // use predefined categories
+            var suppliers = Supplier.GetSuppliers();   // use predefined suppliers
+
+            cmbCategory.Items.Clear();
+            cmbCategory.Items.Add("All");
+            cmbCategory.Items.AddRange(categories.ToArray());
+            cmbCategory.SelectedIndex = 0;
+
+            cmbSupplier.Items.Clear();
+            cmbSupplier.Items.Add("All");
+            cmbSupplier.Items.AddRange(suppliers.ToArray());
+            cmbSupplier.SelectedIndex = 0;
+
+            cmbCategory.SelectedIndexChanged += FilterChanged;
+            cmbSupplier.SelectedIndexChanged += FilterChanged;
+        }
+
+        private void FilterChanged(object sender, EventArgs e)
+        {
+            var filtered = allProducts.AsEnumerable();
+
+            if (cmbCategory.SelectedItem.ToString() != "All")
+                filtered = filtered.Where(p => p.Category == cmbCategory.SelectedItem.ToString());
+
+            if (cmbSupplier.SelectedItem.ToString() != "All")
+                filtered = filtered.Where(p => p.Supplier == cmbSupplier.SelectedItem.ToString());
+
+            LoadInventoryGrid(filtered.ToList());
+        }
+
+        private void LoadInventoryGrid(List<Product> products)
+        {
+            dgvInventory.Columns.Clear();
+            dgvInventory.Rows.Clear();
+
+            dgvInventory.Columns.Add("ProductID", "Product ID");
+            dgvInventory.Columns.Add("ProductName", "Product Name");
+            dgvInventory.Columns.Add("Category", "Category");
+            dgvInventory.Columns.Add("Supplier", "Supplier");
+            dgvInventory.Columns.Add("Quantity", "Quantity in Stock");
+
+            DataGridViewButtonColumn adjustCol = new DataGridViewButtonColumn
             {
-                string selectedSKU = dgvInventory.CurrentRow.Cells["SKU"].Value.ToString();
+                Name = "Adjust",
+                HeaderText = "Adjust",
+                Text = "Update",
+                UseColumnTextForButtonValue = true
+            };
+            dgvInventory.Columns.Add(adjustCol);
 
-                var helper = new FirebaseHelper();
-                var product = await helper.GetProductBySKU(selectedSKU);
+            foreach (var p in products)
+            {
+                dgvInventory.Rows.Add(p.ProductID, p.ProductName, p.Category, p.Supplier, p.Quantity);
+            }
 
-                if (product != null)
+            dgvInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private async void dgvInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvInventory.Columns[e.ColumnIndex].Name == "Adjust" && e.RowIndex >= 0)
+            {
+                string productId = dgvInventory.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                string input = Microsoft.VisualBasic.Interaction.InputBox("Enter new quantity:", "Update Stock");
+
+                if (int.TryParse(input, out int newQty))
                 {
-                    using (frmAdjustStock adjustForm = new frmAdjustStock(product))
-                    {
-                        if (adjustForm.ShowDialog() == DialogResult.OK)
-                        {
-                            await LoadInventoryGrid(); // refresh grid after update
-                        }
-                    }
+                    await helper.UpdateProductQuantity(productId, newQty);
+                    MessageBox.Show("Stock updated.");
+                    allProducts = await helper.GetAllProducts();
+                    FilterChanged(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid quantity entered.");
                 }
             }
         }

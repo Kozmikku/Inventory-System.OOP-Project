@@ -36,17 +36,11 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel1 = new Panel();
             label1 = new Label();
             dgvProducts = new DataGridView();
             panel2 = new Panel();
-            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnAdd = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
@@ -122,12 +116,10 @@
             dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvProducts.Size = new Size(1036, 476);
             dgvProducts.TabIndex = 3;
-            dgvProducts.CellContentClick += dgvProduct_CellContentClick;
+            dgvProducts.CellContentClick += dgvProducts_CellContentClick;
             // 
             // panel2
             // 
-            panel2.Controls.Add(btnRefresh);
-            panel2.Controls.Add(btnEdit);
             panel2.Controls.Add(btnAdd);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 556);
@@ -135,46 +127,10 @@
             panel2.Size = new Size(1036, 70);
             panel2.TabIndex = 4;
             // 
-            // btnRefresh
-            // 
-            btnRefresh.BorderRadius = 20;
-            btnRefresh.CustomizableEdges = customizableEdges1;
-            btnRefresh.DisabledState.BorderColor = Color.DarkGray;
-            btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnRefresh.FillColor = Color.FromArgb(128, 128, 255);
-            btnRefresh.Font = new Font("Roboto Slab", 9F);
-            btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(369, 13);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnRefresh.Size = new Size(127, 45);
-            btnRefresh.TabIndex = 3;
-            btnRefresh.Text = "Refresh";
-            // 
-            // btnEdit
-            // 
-            btnEdit.BorderRadius = 20;
-            btnEdit.CustomizableEdges = customizableEdges3;
-            btnEdit.DisabledState.BorderColor = Color.DarkGray;
-            btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEdit.FillColor = Color.FromArgb(128, 128, 255);
-            btnEdit.Font = new Font("Roboto Slab", 9F);
-            btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(194, 13);
-            btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnEdit.Size = new Size(127, 45);
-            btnEdit.TabIndex = 2;
-            btnEdit.Text = "Edit Products";
-            // 
             // btnAdd
             // 
             btnAdd.BorderRadius = 20;
-            btnAdd.CustomizableEdges = customizableEdges5;
+            btnAdd.CustomizableEdges = customizableEdges1;
             btnAdd.DisabledState.BorderColor = Color.DarkGray;
             btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -184,7 +140,7 @@
             btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(19, 13);
             btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAdd.Size = new Size(127, 45);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Add Products";
@@ -201,7 +157,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmProducts";
             Text = "frmProducts";
-            Load += frmProduct_Load;
+            Load += frmProducts_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
@@ -216,8 +172,6 @@
         private Label label1;
         private Panel panel2;
         private DataGridView dgvProducts;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }

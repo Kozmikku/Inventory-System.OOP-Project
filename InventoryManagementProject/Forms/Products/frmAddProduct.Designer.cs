@@ -58,6 +58,8 @@
             lblAddEdit = new Label();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel2 = new Panel();
+            label11 = new Label();
+            label10 = new Label();
             btnCancel = new Guna.UI2.WinForms.Guna2Button();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             txtImageFile = new Guna.UI2.WinForms.Guna2TextBox();
@@ -70,7 +72,7 @@
             label9 = new Label();
             numQuantity = new Guna.UI2.WinForms.Guna2NumericUpDown();
             cmbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
-            txtSKU = new Guna.UI2.WinForms.Guna2TextBox();
+            txtProductID = new Guna.UI2.WinForms.Guna2TextBox();
             txtProductName = new Guna.UI2.WinForms.Guna2TextBox();
             label8 = new Label();
             label7 = new Label();
@@ -122,6 +124,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(label10);
             panel2.Controls.Add(btnCancel);
             panel2.Controls.Add(btnSave);
             panel2.Controls.Add(txtImageFile);
@@ -134,7 +138,7 @@
             panel2.Controls.Add(label9);
             panel2.Controls.Add(numQuantity);
             panel2.Controls.Add(cmbCategory);
-            panel2.Controls.Add(txtSKU);
+            panel2.Controls.Add(txtProductID);
             panel2.Controls.Add(txtProductName);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
@@ -149,6 +153,26 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(759, 445);
             panel2.TabIndex = 1;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Roboto Slab", 14.25F);
+            label11.Location = new Point(188, 233);
+            label11.Name = "label11";
+            label11.Size = new Size(43, 26);
+            label11.TabIndex = 23;
+            label11.Text = "RM";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Roboto Slab", 14.25F);
+            label10.Location = new Point(188, 188);
+            label10.Name = "label10";
+            label10.Size = new Size(43, 26);
+            label10.TabIndex = 22;
+            label10.Text = "RM";
             // 
             // btnCancel
             // 
@@ -284,12 +308,12 @@
             txtSellPrice.Font = new Font("Segoe UI", 9F);
             txtSellPrice.ForeColor = Color.Black;
             txtSellPrice.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSellPrice.Location = new Point(188, 230);
+            txtSellPrice.Location = new Point(230, 230);
             txtSellPrice.Name = "txtSellPrice";
             txtSellPrice.PlaceholderText = "";
             txtSellPrice.SelectedText = "";
             txtSellPrice.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txtSellPrice.Size = new Size(278, 32);
+            txtSellPrice.Size = new Size(236, 32);
             txtSellPrice.TabIndex = 14;
             // 
             // txtCostPrice
@@ -304,12 +328,12 @@
             txtCostPrice.Font = new Font("Segoe UI", 9F);
             txtCostPrice.ForeColor = Color.Black;
             txtCostPrice.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCostPrice.Location = new Point(188, 185);
+            txtCostPrice.Location = new Point(230, 185);
             txtCostPrice.Name = "txtCostPrice";
             txtCostPrice.PlaceholderText = "";
             txtCostPrice.SelectedText = "";
             txtCostPrice.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtCostPrice.Size = new Size(278, 32);
+            txtCostPrice.Size = new Size(236, 32);
             txtCostPrice.TabIndex = 13;
             // 
             // label9
@@ -351,26 +375,26 @@
             cmbCategory.Size = new Size(278, 36);
             cmbCategory.TabIndex = 10;
             // 
-            // txtSKU
+            // txtProductID
             // 
-            txtSKU.CustomizableEdges = customizableEdges23;
-            txtSKU.DefaultText = "";
-            txtSKU.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtSKU.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtSKU.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtSKU.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtSKU.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSKU.Font = new Font("Segoe UI", 9F);
-            txtSKU.ForeColor = Color.Black;
-            txtSKU.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSKU.Location = new Point(188, 54);
-            txtSKU.Name = "txtSKU";
-            txtSKU.PlaceholderText = "";
-            txtSKU.ReadOnly = true;
-            txtSKU.SelectedText = "";
-            txtSKU.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            txtSKU.Size = new Size(278, 32);
-            txtSKU.TabIndex = 9;
+            txtProductID.CustomizableEdges = customizableEdges23;
+            txtProductID.DefaultText = "";
+            txtProductID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtProductID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtProductID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtProductID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtProductID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtProductID.Font = new Font("Segoe UI", 9F);
+            txtProductID.ForeColor = Color.Black;
+            txtProductID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtProductID.Location = new Point(188, 54);
+            txtProductID.Name = "txtProductID";
+            txtProductID.PlaceholderText = "";
+            txtProductID.ReadOnly = true;
+            txtProductID.SelectedText = "";
+            txtProductID.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            txtProductID.Size = new Size(278, 32);
+            txtProductID.TabIndex = 9;
             // 
             // txtProductName
             // 
@@ -456,11 +480,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Roboto Slab", 14.25F);
-            label2.Location = new Point(108, 54);
+            label2.Location = new Point(52, 54);
             label2.Name = "label2";
-            label2.Size = new Size(55, 26);
+            label2.Size = new Size(110, 26);
             label2.TabIndex = 1;
-            label2.Text = "SKU:";
+            label2.Text = "Product ID:";
             // 
             // label1
             // 
@@ -483,6 +507,7 @@
             Name = "frmAddProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmProduct";
+            Load += frmAddProduct_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -505,7 +530,7 @@
         private Label label3;
         private Label label2;
         private Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox txtSKU;
+        private Guna.UI2.WinForms.Guna2TextBox txtProductID;
         private Guna.UI2.WinForms.Guna2TextBox txtProductName;
         private Guna.UI2.WinForms.Guna2ComboBox cmbSupplier;
         private Guna.UI2.WinForms.Guna2TextBox txtSellPrice;
@@ -520,5 +545,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Label lblAddEdit;
+        private Label label10;
+        private Label label11;
     }
 }

@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace InventoryManagementProject.Models
 {
-    internal class Category
+    public class Category
     {
+            public static List<string> GetCategories()
+            {
+                return new List<string>
+            {
+                "Nike",
+                "Adidas",
+                "Puma",
+                "New Balance",
+                "Converse"
+            };
+            }
+        
     }
 }

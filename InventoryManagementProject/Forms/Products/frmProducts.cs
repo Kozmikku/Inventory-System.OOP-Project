@@ -19,11 +19,10 @@ namespace InventoryManagementProject.Forms.Categories
         {
             InitializeComponent();
         }
-        private async void frmProduct_Load(object sender, EventArgs e)
+        private async void frmProducts_Load(object sender, EventArgs e)
         {
             await LoadProductsToGrid();
             AddDeleteButtonToGrid();
-            _ = LoadProductsToGrid();
         }
 
         private async Task LoadProductsToGrid()
@@ -38,7 +37,7 @@ namespace InventoryManagementProject.Forms.Categories
             AddImageColumnToGrid();
 
             // Add other columns manually
-            dgvProducts.Columns.Add("SKU", "SKU");
+            dgvProducts.Columns.Add("ProductID", "Product ID");
             dgvProducts.Columns.Add("ProductName", "Product Name");
             dgvProducts.Columns.Add("Category", "Category");
             dgvProducts.Columns.Add("Quantity", "Quantity");
@@ -65,7 +64,7 @@ namespace InventoryManagementProject.Forms.Categories
                     }
                 }
 
-                dgvProducts.Rows.Add(thumb, p.SKU, p.ProductName, p.Category, p.Quantity,
+                dgvProducts.Rows.Add(thumb, p.ProductID, p.ProductName, p.Category, p.Quantity,
                                      p.CostPrice, p.SellPrice, p.Supplier, p.Description);
             }
         }
@@ -93,7 +92,7 @@ namespace InventoryManagementProject.Forms.Categories
             btnDelete.UseColumnTextForButtonValue = true;
             dgvProducts.Columns.Add(btnDelete);
         }
-        private async void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvProducts.Columns[e.ColumnIndex].Name == "btnDelete" && e.RowIndex >= 0)
             {
@@ -103,7 +102,7 @@ namespace InventoryManagementProject.Forms.Categories
                     var row = dgvProducts.Rows[e.RowIndex];
                     var selectedProduct = new Product
                     {
-                        SKU = row.Cells["SKU"].Value?.ToString(),
+                        ProductID = row.Cells["ProductID"].Value?.ToString(),
                         ProductName = row.Cells["ProductName"].Value?.ToString(),
                         Category = row.Cells["Category"].Value?.ToString(),
                         Quantity = Convert.ToInt32(row.Cells["Quantity"].Value ?? 0),
@@ -120,7 +119,7 @@ namespace InventoryManagementProject.Forms.Categories
         private async Task DeleteProductFromFirebase(Product product)
         {
             var helper = new FirebaseHelper();
-            await helper.DeleteProductBySKU(product.SKU);
+            await helper.DeleteProductByProductID(product.ProductID);
         }
         private void AddImageColumnToGrid()
         {
