@@ -175,6 +175,7 @@
             btnReports.TabIndex = 7;
             btnReports.Text = "Reports";
             btnReports.TextAlign = HorizontalAlignment.Right;
+            btnReports.Click += btnReports_Click;
             // 
             // btnUsers
             // 
@@ -293,6 +294,7 @@
             btnSales.TabIndex = 12;
             btnSales.Text = "Sales";
             btnSales.TextAlign = HorizontalAlignment.Right;
+            btnSales.Click += btnSales_Click;
             // 
             // panel1
             // 

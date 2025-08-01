@@ -111,8 +111,60 @@ namespace InventoryManagementProject.Helpers
         {
             await firebase
                 .Child("Transactions")
-                .Child(transaction.ReferenceNo) // <- use ReferenceNo as key
-                .PutAsync(transaction);         // <- use PutAsync to overwrite/create
+                .Child(transaction.ReferenceNo) // use ReferenceNo as key
+                .PutAsync(transaction);         // use PutAsync to overwrite/create
+        }
+        public async Task<List<Report>> GetAllReports()
+        {
+            var salesReports = await firebase
+         .Child("sales")
+         .OnceAsync<SalesReport>();
+
+            var stockReports = await firebase
+                .Child("stock")
+                .OnceAsync<StockReport>();
+
+            var allReports = new List<Report>();
+
+            allReports.AddRange(salesReports.Select(s =>
+            {
+                var r = s.Object;
+                r.ReportID = s.Key;
+                return (Report)r;
+            }));
+
+            allReports.AddRange(stockReports.Select(s =>
+            {
+                var r = s.Object;
+                r.ReportID = s.Key;
+                return (Report)r;
+            }));
+
+            return allReports.OrderByDescending(r => r.ReportDate).ToList();
+        }
+
+        public async Task AddReport(Report report)
+        {
+            string node = report.ReportType.ToLower(); // "sales" or "stock"
+            await firebase
+                .Child(node)
+                .Child(report.ReportID)
+                .PutAsync(report);
+        }
+        public async Task SaveSale(Transaction sale)
+        {
+            await firebase
+                .Child("Sales")
+                .Child(sale.ReferenceNo)
+                .PutAsync(sale);
+        }
+
+        public async Task DeleteReport(string reportID)
+        {
+            await firebase
+                .Child("Reports")
+                .Child(reportID)
+                .DeleteAsync();
         }
     }
 }

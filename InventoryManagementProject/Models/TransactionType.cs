@@ -12,10 +12,8 @@ namespace InventoryManagementProject.Models
         {
             return new List<string>
         {
-            "All",         // For filtering purposes
-            "Stock In",
-            "Stock Out",
-            "Adjustment"
+           "Stock In",
+           "Sale"
         };
         }
     }

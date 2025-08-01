@@ -21,9 +21,12 @@ namespace InventoryManagementProject.Forms.Reports
         }
         private async void frmTransactions_Load(object sender, EventArgs e)
         {
-            cmbTrans.DataSource = TransactionType.GetTypes(); // Should include "All" at the top
+            cmbTrans.Items.Clear();
+            cmbTrans.Items.Add("All");
+            cmbTrans.Items.Add("Stock In");
+            cmbTrans.Items.Add("Sale");
+            cmbTrans.SelectedIndex = 0;
             dtpTrans.Value = DateTime.Today;
-
             await LoadTransactions();
         }
 

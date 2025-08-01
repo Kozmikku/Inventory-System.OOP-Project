@@ -117,8 +117,14 @@ namespace InventoryManagementProject.Forms.Reports
                 TotalAmount = addedProducts.Sum(p => p.Quantity * p.UnitPrice)
             };
 
+           
+
             var helper = new FirebaseHelper();
             await helper.SaveTransaction(transaction);
+            if (transaction.Type == "Sale")
+            {
+                await helper.SaveSale(transaction); // <-- Add this
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();

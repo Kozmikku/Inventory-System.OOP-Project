@@ -2,6 +2,7 @@
 using InventoryManagementProject.Forms.Home;
 using InventoryManagementProject.Forms.Inventory;
 using InventoryManagementProject.Forms.Reports;
+using InventoryManagementProject.Forms.Sales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,6 +62,16 @@ namespace InventoryManagementProject.Forms.Dashboard
         private void frmDashboard_Load(object sender, EventArgs e)
         {
             OpenFormInPanel(new frmHome());
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new frmSales());
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new frmReport());
         }
     }
 }

@@ -111,6 +111,7 @@ namespace InventoryManagementProject.Forms.Inventory
                     MessageBox.Show("Invalid quantity entered.");
                 }
             }
+
         }
     }
 }

@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tabPage2 = new TabPage();
-            tabPage1 = new TabPage();
             tabPage3 = new TabPage();
             form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2TabControl1.SuspendLayout();
@@ -41,7 +40,6 @@
             // 
             guna2TabControl1.Alignment = TabAlignment.Left;
             guna2TabControl1.Controls.Add(tabPage2);
-            guna2TabControl1.Controls.Add(tabPage1);
             guna2TabControl1.Controls.Add(tabPage3);
             guna2TabControl1.Dock = DockStyle.Bottom;
             guna2TabControl1.ItemSize = new Size(180, 40);
@@ -78,16 +76,6 @@
             tabPage2.Text = "General";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
-            // 
-            tabPage1.Location = new Point(184, 4);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(841, 620);
-            tabPage1.TabIndex = 2;
-            tabPage1.Text = "Users";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             tabPage3.Location = new Point(184, 4);
@@ -122,7 +110,6 @@
 
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private TabPage tabPage2;
-        private TabPage tabPage1;
         private TabPage tabPage3;
         private Guna.UI2.WinForms.Guna2BorderlessForm form;
     }
