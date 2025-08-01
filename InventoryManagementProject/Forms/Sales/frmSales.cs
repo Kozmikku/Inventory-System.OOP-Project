@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventoryManagementProject.Forms.Inventory
+namespace InventoryManagementProject.Forms.Sales
 {
-    public partial class frmAddProduct : Form
+    public partial class frmSales : Form
     {
-        public frmAddProduct()
+        public frmSales()
         {
             InitializeComponent();
         }

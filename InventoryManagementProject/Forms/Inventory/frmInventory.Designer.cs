@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,6 +50,7 @@
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnAdd = new Guna.UI2.WinForms.Guna2Button();
             dgvProducts = new DataGridView();
+            form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
@@ -77,7 +79,7 @@
             txtSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSearch.Font = new Font("Segoe UI", 9F);
             txtSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSearch.Location = new Point(796, 20);
+            txtSearch.Location = new Point(401, 20);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search";
             txtSearch.SelectedText = "";
@@ -211,6 +213,13 @@
             dgvProducts.Size = new Size(1036, 466);
             dgvProducts.TabIndex = 2;
             // 
+            // form
+            // 
+            form.AnimateWindow = true;
+            form.ContainerControl = this;
+            form.DockIndicatorTransparencyValue = 0.6D;
+            form.TransparentWhileDrag = true;
+            // 
             // frmInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -243,5 +252,6 @@
         private DataGridView dgvProducts;
         private Label lblTotalCount;
         private Label label2;
+        private Guna.UI2.WinForms.Guna2BorderlessForm form;
     }
 }

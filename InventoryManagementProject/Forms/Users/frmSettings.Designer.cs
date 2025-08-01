@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tabPage2 = new TabPage();
             tabPage1 = new TabPage();
             tabPage3 = new TabPage();
+            form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2TabControl1.SuspendLayout();
             SuspendLayout();
             // 
@@ -96,6 +98,13 @@
             tabPage3.Text = "Preferences";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // form
+            // 
+            form.AnimateWindow = true;
+            form.ContainerControl = this;
+            form.DockIndicatorTransparencyValue = 0.6D;
+            form.TransparentWhileDrag = true;
+            // 
             // frmSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -115,5 +124,6 @@
         private TabPage tabPage2;
         private TabPage tabPage1;
         private TabPage tabPage3;
+        private Guna.UI2.WinForms.Guna2BorderlessForm form;
     }
 }

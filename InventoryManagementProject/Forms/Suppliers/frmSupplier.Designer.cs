@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            btnAddSupplier = new Guna.UI2.WinForms.Guna2Button();
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
-            btnAddSupplier = new Guna.UI2.WinForms.Guna2Button();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -64,10 +66,28 @@
             panel1.Size = new Size(1036, 80);
             panel1.TabIndex = 1;
             // 
+            // btnAddSupplier
+            // 
+            btnAddSupplier.BorderRadius = 10;
+            btnAddSupplier.CustomizableEdges = customizableEdges1;
+            btnAddSupplier.DisabledState.BorderColor = Color.DarkGray;
+            btnAddSupplier.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddSupplier.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddSupplier.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddSupplier.FillColor = Color.FromArgb(128, 128, 255);
+            btnAddSupplier.Font = new Font("Roboto Slab", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddSupplier.ForeColor = Color.White;
+            btnAddSupplier.Location = new Point(523, 20);
+            btnAddSupplier.Name = "btnAddSupplier";
+            btnAddSupplier.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnAddSupplier.Size = new Size(168, 36);
+            btnAddSupplier.TabIndex = 7;
+            btnAddSupplier.Text = "Add Supplier";
+            // 
             // txtSearch
             // 
             txtSearch.BorderRadius = 20;
-            txtSearch.CustomizableEdges = customizableEdges9;
+            txtSearch.CustomizableEdges = customizableEdges3;
             txtSearch.DefaultText = "";
             txtSearch.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSearch.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -80,7 +100,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search";
             txtSearch.SelectedText = "";
-            txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtSearch.Size = new Size(200, 36);
             txtSearch.TabIndex = 6;
             // 
@@ -94,24 +114,6 @@
             label1.Size = new Size(193, 36);
             label1.TabIndex = 5;
             label1.Text = "Supplier List";
-            // 
-            // btnAddSupplier
-            // 
-            btnAddSupplier.BorderRadius = 10;
-            btnAddSupplier.CustomizableEdges = customizableEdges11;
-            btnAddSupplier.DisabledState.BorderColor = Color.DarkGray;
-            btnAddSupplier.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAddSupplier.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAddSupplier.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAddSupplier.FillColor = Color.FromArgb(128, 128, 255);
-            btnAddSupplier.Font = new Font("Roboto Slab", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddSupplier.ForeColor = Color.White;
-            btnAddSupplier.Location = new Point(523, 20);
-            btnAddSupplier.Name = "btnAddSupplier";
-            btnAddSupplier.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnAddSupplier.Size = new Size(168, 36);
-            btnAddSupplier.TabIndex = 7;
-            btnAddSupplier.Text = "Add Supplier";
             // 
             // dataGridView1
             // 
@@ -136,7 +138,7 @@
             // btnRefresh
             // 
             btnRefresh.BorderRadius = 20;
-            btnRefresh.CustomizableEdges = customizableEdges13;
+            btnRefresh.CustomizableEdges = customizableEdges5;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -146,7 +148,7 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.Location = new Point(323, 16);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(93, 45);
             btnRefresh.TabIndex = 6;
             btnRefresh.Text = "Refresh";
@@ -154,7 +156,7 @@
             // btnDelete
             // 
             btnDelete.BorderRadius = 20;
-            btnDelete.CustomizableEdges = customizableEdges15;
+            btnDelete.CustomizableEdges = customizableEdges7;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -164,7 +166,7 @@
             btnDelete.ForeColor = Color.White;
             btnDelete.Location = new Point(174, 16);
             btnDelete.Name = "btnDelete";
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnDelete.Size = new Size(93, 45);
             btnDelete.TabIndex = 5;
             btnDelete.Text = "Delete";
@@ -172,7 +174,7 @@
             // btnEdit
             // 
             btnEdit.BorderRadius = 20;
-            btnEdit.CustomizableEdges = customizableEdges17;
+            btnEdit.CustomizableEdges = customizableEdges9;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -182,10 +184,17 @@
             btnEdit.ForeColor = Color.White;
             btnEdit.Location = new Point(33, 16);
             btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnEdit.Size = new Size(93, 45);
             btnEdit.TabIndex = 4;
             btnEdit.Text = "Edit";
+            // 
+            // form
+            // 
+            form.AnimateWindow = true;
+            form.ContainerControl = this;
+            form.DockIndicatorTransparencyValue = 0.6D;
+            form.TransparentWhileDrag = true;
             // 
             // frmSupplier
             // 
@@ -216,5 +225,6 @@
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2BorderlessForm form;
     }
 }

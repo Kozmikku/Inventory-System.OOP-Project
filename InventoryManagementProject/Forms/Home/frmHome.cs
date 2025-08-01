@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventoryManagementProject.Forms.Categories
+namespace InventoryManagementProject.Forms.Home
 {
-    public partial class frmCategories : Form
+    public partial class frmHome : Form
     {
-        public frmCategories()
+        public frmHome()
         {
             InitializeComponent();
         }

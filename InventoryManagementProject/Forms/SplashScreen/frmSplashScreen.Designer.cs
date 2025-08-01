@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             progressBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             label2 = new Label();
             splashTimer = new System.Windows.Forms.Timer(components);
+            form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -59,14 +60,14 @@
             // 
             // progressBar
             // 
-            progressBar.CustomizableEdges = customizableEdges1;
+            progressBar.CustomizableEdges = customizableEdges3;
             progressBar.Dock = DockStyle.Bottom;
             progressBar.Location = new Point(0, 325);
             progressBar.Name = "progressBar";
             progressBar.ProgressColor = Color.FromArgb(128, 128, 255);
             progressBar.ProgressColor2 = Color.FromArgb(128, 128, 255);
             progressBar.RightToLeft = RightToLeft.No;
-            progressBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            progressBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             progressBar.Size = new Size(600, 25);
             progressBar.TabIndex = 6;
             progressBar.Text = "guna2ProgressBar1";
@@ -87,6 +88,14 @@
             splashTimer.Enabled = true;
             splashTimer.Interval = 50;
             splashTimer.Tick += splashTimer_Tick;
+            // 
+            // form
+            // 
+            form.AnimateWindow = true;
+            form.ContainerControl = this;
+            form.DockIndicatorTransparencyValue = 0.6D;
+            form.DragForm = false;
+            form.TransparentWhileDrag = true;
             // 
             // frmSplashScreen
             // 
@@ -115,5 +124,6 @@
         private Guna.UI2.WinForms.Guna2ProgressBar progressBar;
         private Label label2;
         private System.Windows.Forms.Timer splashTimer;
+        private Guna.UI2.WinForms.Guna2BorderlessForm form;
     }
 }
