@@ -20,24 +20,16 @@ namespace InventoryManagementProject.Forms.Home
 
         private async void frmHome_Load(object sender, EventArgs e)
         {
-            await LoadDashboardStats();
-        }
-        private async Task LoadDashboardStats()
-        {
             var helper = new FirebaseHelper();
 
-            // Products count
-            var products = await helper.GetAllProducts();
-            lblProduct.Text = products.Count.ToString();
+            int productCount = await helper.GetProductCount();
+            int transactionCount = await helper.GetTransactionCount();
+            int salesCount = await helper.GetSalesCount();
+            double totalRevenue = await helper.GetTotalSalesRevenue();
 
-            // Transactions count
-            var transactions = await helper.GetAllTransactions();
-            lblTransactions.Text = transactions.Count.ToString();
-
-            // Total sales
-            var sales = transactions.Where(t => t.Type == "Sale").ToList();
-            double totalSales = sales.Sum(s => s.TotalAmount);
-            lblSales.Text = $"RM {totalSales:0.00}";
+            lblProduct.Text = $"Total Products: {productCount}";
+            lblTransactions.Text = $"Total Transactions: {transactionCount}";
+            lblSales.Text = $"Total Sales: {salesCount} (Revenue: RM {totalRevenue:N2})";
         }
     }
 }

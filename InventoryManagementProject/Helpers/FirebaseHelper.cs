@@ -174,6 +174,28 @@ namespace InventoryManagementProject.Helpers
 
             return sales.Select(s => s.Object).ToList();
         }
+        public async Task<int> GetProductCount()
+        {
+            var products = await firebase.Child("Products").OnceAsync<Product>();
+            return products.Count;
+        }
+
+        public async Task<int> GetTransactionCount()
+        {
+            var transactions = await firebase.Child("Transactions").OnceAsync<Transaction>();
+            return transactions.Count;
+        }
+
+        public async Task<int> GetSalesCount()
+        {
+            var sales = await firebase.Child("Sales").OnceAsync<Transaction>();
+            return sales.Count;
+        }
+        public async Task<double> GetTotalSalesRevenue()
+        {
+            var sales = await firebase.Child("Sales").OnceAsync<Transaction>();
+            return sales.Sum(s => s.Object.TotalAmount);
+        }
 
     }
 }

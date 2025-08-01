@@ -14,13 +14,13 @@ namespace InventoryManagementProject.Helpers
 
         private readonly HttpClient client = new HttpClient();
 
-        public async Task<bool> SignUp(string email, string password, string username)
+        public async Task<bool> SignUp(string email, string password)
         {
             var payload = new
             {
                 email = email,
                 password = password,
-                username = username,
+
                 returnSecureToken = true
             };
 
@@ -32,13 +32,12 @@ namespace InventoryManagementProject.Helpers
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> SignIn(string email, string password, string username)
+        public async Task<bool> SignIn(string email, string password)
         {
             var payload = new
             {
                 email = email,
                 password = password,
-                username = username,
                 returnSecureToken = true
             };
 

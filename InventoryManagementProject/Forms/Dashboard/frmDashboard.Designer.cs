@@ -31,8 +31,6 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,11 +45,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelHeader = new Panel();
             guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
-            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panelMain = new Panel();
             btnHome = new Guna.UI2.WinForms.Guna2Button();
             btnInventory = new Guna.UI2.WinForms.Guna2Button();
@@ -64,8 +61,8 @@
             btnTransactions = new Guna.UI2.WinForms.Guna2Button();
             btnSales = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
-            btnSettings = new Guna.UI2.WinForms.Guna2Button();
             form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
+            btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             panelHeader.SuspendLayout();
             panelSidebar.SuspendLayout();
             panel2.SuspendLayout();
@@ -77,7 +74,7 @@
             panelHeader.BackColor = Color.FromArgb(128, 128, 255);
             panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(guna2ControlBox3);
-            panelHeader.Controls.Add(guna2ControlBox1);
+            panelHeader.Controls.Add(btnExit);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(198, 0);
             panelHeader.Name = "panelHeader";
@@ -96,18 +93,6 @@
             guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2ControlBox3.Size = new Size(45, 33);
             guna2ControlBox3.TabIndex = 4;
-            // 
-            // guna2ControlBox1
-            // 
-            guna2ControlBox1.CustomizableEdges = customizableEdges3;
-            guna2ControlBox1.Dock = DockStyle.Right;
-            guna2ControlBox1.FillColor = Color.FromArgb(128, 128, 255);
-            guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(989, 0);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ControlBox1.Size = new Size(45, 33);
-            guna2ControlBox1.TabIndex = 2;
             // 
             // panelMain
             // 
@@ -128,10 +113,12 @@
             btnHome.FillColor = Color.FromArgb(128, 128, 255);
             btnHome.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnHome.ForeColor = Color.White;
+            btnHome.Image = Properties.Resources.icons8_home_50;
+            btnHome.ImageAlign = HorizontalAlignment.Right;
             btnHome.Location = new Point(0, 176);
             btnHome.Name = "btnHome";
             btnHome.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnHome.Size = new Size(196, 45);
+            btnHome.Size = new Size(196, 48);
             btnHome.TabIndex = 2;
             btnHome.Text = "Home";
             btnHome.TextAlign = HorizontalAlignment.Right;
@@ -148,7 +135,9 @@
             btnInventory.FillColor = Color.FromArgb(128, 128, 255);
             btnInventory.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnInventory.ForeColor = Color.White;
-            btnInventory.Location = new Point(0, 221);
+            btnInventory.Image = Properties.Resources.icons8_inventory_50;
+            btnInventory.ImageAlign = HorizontalAlignment.Right;
+            btnInventory.Location = new Point(0, 224);
             btnInventory.Name = "btnInventory";
             btnInventory.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnInventory.Size = new Size(196, 45);
@@ -168,7 +157,9 @@
             btnReports.FillColor = Color.FromArgb(128, 128, 255);
             btnReports.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnReports.ForeColor = Color.White;
-            btnReports.Location = new Point(0, 401);
+            btnReports.Image = Properties.Resources.icons8_reports_50;
+            btnReports.ImageAlign = HorizontalAlignment.Right;
+            btnReports.Location = new Point(0, 404);
             btnReports.Name = "btnReports";
             btnReports.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnReports.Size = new Size(196, 45);
@@ -188,6 +179,8 @@
             btnLogOut.FillColor = Color.FromArgb(128, 128, 255);
             btnLogOut.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnLogOut.ForeColor = Color.White;
+            btnLogOut.Image = Properties.Resources.icons8_log_out_50;
+            btnLogOut.ImageAlign = HorizontalAlignment.Right;
             btnLogOut.Location = new Point(0, 614);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -209,7 +202,6 @@
             panelSidebar.Controls.Add(btnSales);
             panelSidebar.Controls.Add(btnReports);
             panelSidebar.Controls.Add(panel1);
-            panelSidebar.Controls.Add(btnSettings);
             panelSidebar.Controls.Add(btnLogOut);
             panelSidebar.Dock = DockStyle.Left;
             panelSidebar.ForeColor = SystemColors.ActiveCaptionText;
@@ -222,18 +214,19 @@
             // 
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 0);
+            panel2.Location = new Point(0, -45);
             panel2.Name = "panel2";
-            panel2.Size = new Size(196, 176);
+            panel2.Size = new Size(196, 221);
             panel2.TabIndex = 14;
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Dock = DockStyle.Bottom;
+            pictureBox1.Image = Properties.Resources.SwiftStock_removebg_preview;
+            pictureBox1.Location = new Point(0, 45);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(196, 176);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -248,7 +241,9 @@
             btnProducts.FillColor = Color.FromArgb(128, 128, 255);
             btnProducts.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnProducts.ForeColor = Color.White;
-            btnProducts.Location = new Point(0, 266);
+            btnProducts.Image = Properties.Resources.icons8_products_50;
+            btnProducts.ImageAlign = HorizontalAlignment.Right;
+            btnProducts.Location = new Point(0, 269);
             btnProducts.Name = "btnProducts";
             btnProducts.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnProducts.Size = new Size(196, 45);
@@ -268,7 +263,9 @@
             btnTransactions.FillColor = Color.FromArgb(128, 128, 255);
             btnTransactions.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnTransactions.ForeColor = Color.White;
-            btnTransactions.Location = new Point(0, 311);
+            btnTransactions.Image = Properties.Resources.icons8_transaction_30;
+            btnTransactions.ImageAlign = HorizontalAlignment.Right;
+            btnTransactions.Location = new Point(0, 314);
             btnTransactions.Name = "btnTransactions";
             btnTransactions.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnTransactions.Size = new Size(196, 45);
@@ -288,7 +285,9 @@
             btnSales.FillColor = Color.FromArgb(128, 128, 255);
             btnSales.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
             btnSales.ForeColor = Color.White;
-            btnSales.Location = new Point(0, 356);
+            btnSales.Image = Properties.Resources.icons8_sales_50;
+            btnSales.ImageAlign = HorizontalAlignment.Right;
+            btnSales.Location = new Point(0, 359);
             btnSales.Name = "btnSales";
             btnSales.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnSales.Size = new Size(196, 45);
@@ -300,29 +299,10 @@
             // panel1
             // 
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 446);
+            panel1.Location = new Point(0, 449);
             panel1.Name = "panel1";
-            panel1.Size = new Size(196, 123);
+            panel1.Size = new Size(196, 165);
             panel1.TabIndex = 13;
-            // 
-            // btnSettings
-            // 
-            btnSettings.CustomizableEdges = customizableEdges19;
-            btnSettings.DisabledState.BorderColor = Color.DarkGray;
-            btnSettings.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSettings.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSettings.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSettings.Dock = DockStyle.Bottom;
-            btnSettings.FillColor = Color.FromArgb(128, 128, 255);
-            btnSettings.Font = new Font("Roboto Slab Medium", 9F, FontStyle.Bold);
-            btnSettings.ForeColor = Color.White;
-            btnSettings.Location = new Point(0, 569);
-            btnSettings.Name = "btnSettings";
-            btnSettings.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnSettings.Size = new Size(196, 45);
-            btnSettings.TabIndex = 10;
-            btnSettings.Text = "Settings";
-            btnSettings.TextAlign = HorizontalAlignment.Right;
             // 
             // form
             // 
@@ -330,6 +310,19 @@
             form.ContainerControl = this;
             form.DockIndicatorTransparencyValue = 0.6D;
             form.TransparentWhileDrag = true;
+            // 
+            // btnExit
+            // 
+            btnExit.CustomizableEdges = customizableEdges3;
+            btnExit.Dock = DockStyle.Right;
+            btnExit.FillColor = Color.FromArgb(128, 128, 255);
+            btnExit.IconColor = Color.White;
+            btnExit.Location = new Point(989, 0);
+            btnExit.Name = "btnExit";
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnExit.Size = new Size(45, 33);
+            btnExit.TabIndex = 5;
+            btnExit.Click += btnExit_Click;
             // 
             // frmDashboard
             // 
@@ -348,7 +341,6 @@
             panelHeader.ResumeLayout(false);
             panelSidebar.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -357,14 +349,12 @@
 
         private Panel panelHeader;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Panel panelMain;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnInventory;
         private Guna.UI2.WinForms.Guna2Button btnReports;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Panel panelSidebar;
-        private Guna.UI2.WinForms.Guna2Button btnSettings;
         private Guna.UI2.WinForms.Guna2Button btnTransactions;
         private Guna.UI2.WinForms.Guna2Button btnProducts;
         private Guna.UI2.WinForms.Guna2BorderlessForm form;
@@ -372,5 +362,6 @@
         private Panel panel2;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox btnExit;
     }
 }

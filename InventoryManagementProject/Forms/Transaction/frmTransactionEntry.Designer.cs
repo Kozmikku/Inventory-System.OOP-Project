@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
@@ -54,16 +55,17 @@
             label1 = new Label();
             dtpTransactionDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             panel2 = new Panel();
-            btnTransaction = new Guna.UI2.WinForms.Guna2Button();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             label3 = new Label();
             txtReferenceNo = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
+            btnTransaction = new Guna.UI2.WinForms.Guna2Button();
             label4 = new Label();
             panel3 = new Panel();
             lblTotalAmount = new Label();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             dgvAddedProduct = new DataGridView();
+            form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -164,25 +166,6 @@
             panel2.Size = new Size(615, 101);
             panel2.TabIndex = 9;
             // 
-            // btnTransaction
-            // 
-            btnTransaction.BorderRadius = 10;
-            btnTransaction.CustomizableEdges = customizableEdges11;
-            btnTransaction.DisabledState.BorderColor = Color.DarkGray;
-            btnTransaction.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTransaction.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTransaction.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTransaction.FillColor = Color.FromArgb(128, 128, 255);
-            btnTransaction.Font = new Font("Roboto Slab", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTransaction.ForeColor = Color.White;
-            btnTransaction.Location = new Point(422, 10);
-            btnTransaction.Name = "btnTransaction";
-            btnTransaction.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnTransaction.Size = new Size(180, 36);
-            btnTransaction.TabIndex = 14;
-            btnTransaction.Text = "Add Product";
-            btnTransaction.Click += btnAddProduct_Click;
-            // 
             // guna2TextBox2
             // 
             guna2TextBox2.CustomizableEdges = customizableEdges7;
@@ -240,6 +223,25 @@
             label2.Size = new Size(136, 26);
             label2.TabIndex = 9;
             label2.Text = "Reference No:";
+            // 
+            // btnTransaction
+            // 
+            btnTransaction.BorderRadius = 10;
+            btnTransaction.CustomizableEdges = customizableEdges11;
+            btnTransaction.DisabledState.BorderColor = Color.DarkGray;
+            btnTransaction.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTransaction.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTransaction.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTransaction.FillColor = Color.FromArgb(128, 128, 255);
+            btnTransaction.Font = new Font("Roboto Slab", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTransaction.ForeColor = Color.White;
+            btnTransaction.Location = new Point(422, 10);
+            btnTransaction.Name = "btnTransaction";
+            btnTransaction.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnTransaction.Size = new Size(180, 36);
+            btnTransaction.TabIndex = 14;
+            btnTransaction.Text = "Add Product";
+            btnTransaction.Click += btnAddProduct_Click;
             // 
             // label4
             // 
@@ -332,6 +334,13 @@
             dgvAddedProduct.Size = new Size(615, 200);
             dgvAddedProduct.TabIndex = 12;
             // 
+            // form
+            // 
+            form.AnimateWindow = true;
+            form.ContainerControl = this;
+            form.DockIndicatorTransparencyValue = 0.6D;
+            form.TransparentWhileDrag = true;
+            // 
             // frmTransactionEntry
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -375,5 +384,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Label lblTotalAmount;
         private DataGridView dgvAddedProduct;
+        private Guna.UI2.WinForms.Guna2BorderlessForm form;
     }
 }

@@ -19,9 +19,8 @@ namespace InventoryManagementProject.Forms.Authentication
         {
             string email = txtEmail.Text;
             string password = txtPassword.Text;
-            string username = txtUsername.Text;
 
-            bool success = await auth.SignIn(email, password, username);
+            bool success = await auth.SignIn(email, password);
             if (success)
             {
                 MessageBox.Show("Login successful!");
@@ -60,10 +59,9 @@ namespace InventoryManagementProject.Forms.Authentication
             }
 
             string email = txtEmail.Text;
-            string username = txtUsername.Text;
 
 
-            bool success = await auth.SignUp(email, password, username);
+            bool success = await auth.SignUp(email, password);
             if (success)
             {
                 MessageBox.Show("Account created! You can now login.");
@@ -100,6 +98,11 @@ namespace InventoryManagementProject.Forms.Authentication
                     lblStrength.ForeColor = Color.Green;
                     break;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

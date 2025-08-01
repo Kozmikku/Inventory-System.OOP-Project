@@ -46,10 +46,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
-            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
             txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,10 +57,12 @@
             label2 = new Label();
             form = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             panel3 = new Panel();
             chkShowPassword = new Guna.UI2.WinForms.Guna2ImageCheckBox();
-            txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,24 +70,25 @@
             // 
             panel1.BackColor = Color.FromArgb(128, 128, 255);
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(guna2ControlBox1);
+            panel1.Controls.Add(btnExit);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(241, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(527, 35);
             panel1.TabIndex = 0;
             // 
-            // guna2ControlBox1
+            // btnExit
             // 
-            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.CustomizableEdges = customizableEdges1;
-            guna2ControlBox1.FillColor = Color.FromArgb(128, 128, 255);
-            guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(481, -1);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ControlBox1.Size = new Size(45, 35);
-            guna2ControlBox1.TabIndex = 1;
+            btnExit.CustomizableEdges = customizableEdges1;
+            btnExit.Dock = DockStyle.Right;
+            btnExit.FillColor = Color.FromArgb(128, 128, 255);
+            btnExit.IconColor = Color.White;
+            btnExit.Location = new Point(480, 0);
+            btnExit.Name = "btnExit";
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnExit.Size = new Size(45, 33);
+            btnExit.TabIndex = 1;
+            btnExit.Click += btnExit_Click;
             // 
             // txtEmail
             // 
@@ -101,7 +102,8 @@
             txtEmail.Font = new Font("Roboto Slab", 9F);
             txtEmail.ForeColor = Color.Black;
             txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(114, 147);
+            txtEmail.IconLeft = Properties.Resources.icons8_email_501;
+            txtEmail.Location = new Point(119, 80);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderForeColor = Color.Gray;
             txtEmail.PlaceholderText = "Email";
@@ -119,7 +121,7 @@
             label1.Name = "label1";
             label1.Size = new Size(295, 36);
             label1.TabIndex = 4;
-            label1.Text = "Log In to SwitfStock";
+            label1.Text = "Log In to SwiftStock";
             // 
             // txtPassword
             // 
@@ -133,7 +135,8 @@
             txtPassword.Font = new Font("Roboto Slab", 9F);
             txtPassword.ForeColor = Color.Black;
             txtPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPassword.Location = new Point(114, 213);
+            txtPassword.IconLeft = Properties.Resources.icons8_password_50__1_;
+            txtPassword.Location = new Point(119, 146);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderForeColor = Color.Gray;
             txtPassword.PlaceholderText = "Password";
@@ -154,7 +157,7 @@
             btnLogin.FillColor = Color.FromArgb(128, 128, 255);
             btnLogin.Font = new Font("Roboto Slab", 9F);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(152, 311);
+            btnLogin.Location = new Point(157, 244);
             btnLogin.Name = "btnLogin";
             btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnLogin.Size = new Size(221, 29);
@@ -172,7 +175,7 @@
             btnSignUp.FillColor = Color.FromArgb(128, 128, 255);
             btnSignUp.Font = new Font("Roboto Slab", 9F);
             btnSignUp.ForeColor = Color.White;
-            btnSignUp.Location = new Point(152, 373);
+            btnSignUp.Location = new Point(157, 306);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSignUp.Size = new Size(221, 29);
@@ -184,7 +187,7 @@
             // 
             lblStrength.AutoSize = true;
             lblStrength.ForeColor = Color.White;
-            lblStrength.Location = new Point(114, 268);
+            lblStrength.Location = new Point(119, 201);
             lblStrength.Name = "lblStrength";
             lblStrength.Size = new Size(0, 15);
             lblStrength.TabIndex = 8;
@@ -194,7 +197,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Roboto Slab", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(128, 128, 255);
-            label2.Location = new Point(252, 348);
+            label2.Location = new Point(257, 281);
             label2.Name = "label2";
             label2.Size = new Size(20, 17);
             label2.TabIndex = 9;
@@ -210,16 +213,27 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(241, 518);
+            panel2.Size = new Size(241, 401);
             panel2.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.pic1;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(239, 399);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panel3
             // 
             panel3.Controls.Add(chkShowPassword);
-            panel3.Controls.Add(txtUsername);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(lblStrength);
             panel3.Controls.Add(btnSignUp);
@@ -230,7 +244,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(241, 35);
             panel3.Name = "panel3";
-            panel3.Size = new Size(527, 483);
+            panel3.Size = new Size(527, 366);
             panel3.TabIndex = 11;
             // 
             // chkShowPassword
@@ -239,40 +253,19 @@
             chkShowPassword.Image = (Image)resources.GetObject("chkShowPassword.Image");
             chkShowPassword.ImageOffset = new Point(0, 0);
             chkShowPassword.ImageRotate = 0F;
-            chkShowPassword.Location = new Point(422, 222);
+            chkShowPassword.Location = new Point(427, 155);
             chkShowPassword.Name = "chkShowPassword";
             chkShowPassword.ShadowDecoration.CustomizableEdges = customizableEdges11;
             chkShowPassword.Size = new Size(24, 24);
             chkShowPassword.TabIndex = 11;
             chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
             // 
-            // txtUsername
-            // 
-            txtUsername.CustomizableEdges = customizableEdges12;
-            txtUsername.DefaultText = "";
-            txtUsername.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtUsername.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtUsername.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtUsername.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtUsername.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtUsername.Font = new Font("Roboto Slab", 9F);
-            txtUsername.ForeColor = Color.Black;
-            txtUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtUsername.Location = new Point(114, 85);
-            txtUsername.Name = "txtUsername";
-            txtUsername.PlaceholderForeColor = Color.Gray;
-            txtUsername.PlaceholderText = "Username";
-            txtUsername.SelectedText = "";
-            txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            txtUsername.Size = new Size(295, 41);
-            txtUsername.TabIndex = 10;
-            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(768, 518);
+            ClientSize = new Size(768, 401);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -282,6 +275,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmLogin";
             panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -290,7 +285,7 @@
         #endregion
 
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox btnExit;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
@@ -301,7 +296,7 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm form;
         private Panel panel2;
         private Panel panel3;
-        private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private Guna.UI2.WinForms.Guna2ImageCheckBox chkShowPassword;
+        private PictureBox pictureBox1;
     }
 }
