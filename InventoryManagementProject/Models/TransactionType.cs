@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace InventoryManagementProject.Models
 {
-    public class Supplier
+    public class TransactionType
     {
-        public static List<string> GetSuppliers()
+        public static List<string> GetTypes()
         {
             return new List<string>
-            {
-                "Supplier A",
-                "Supplier B",
-                "Supplier C"
-            };
+        {
+            "All",         // For filtering purposes
+            "Stock In",
+            "Stock Out",
+            "Adjustment"
+        };
         }
     }
 }
