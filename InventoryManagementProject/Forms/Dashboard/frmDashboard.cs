@@ -75,10 +75,6 @@ namespace InventoryManagementProject.Forms.Dashboard
         {
             OpenFormInPanel(new frmReport());
         }
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            OpenFormInPanel(new frmSettings());
-        }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to Log Out", "Confirm Exit",
