@@ -4,7 +4,6 @@ using InventoryManagementProject.Forms.Home;
 using InventoryManagementProject.Forms.Inventory;
 using InventoryManagementProject.Forms.Reports;
 using InventoryManagementProject.Forms.Sales;
-using InventoryManagementProject.Forms.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
