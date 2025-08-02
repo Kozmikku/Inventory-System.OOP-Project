@@ -257,6 +257,7 @@
             picProduct.Location = new Point(487, 54);
             picProduct.Name = "picProduct";
             picProduct.Size = new Size(252, 217);
+            picProduct.SizeMode = PictureBoxSizeMode.StretchImage;
             picProduct.TabIndex = 17;
             picProduct.TabStop = false;
             // 

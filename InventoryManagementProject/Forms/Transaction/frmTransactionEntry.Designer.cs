@@ -41,8 +41,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -55,8 +53,6 @@
             label1 = new Label();
             dtpTransactionDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             panel2 = new Panel();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            label3 = new Label();
             txtReferenceNo = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
             btnTransaction = new Guna.UI2.WinForms.Guna2Button();
@@ -153,8 +149,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(guna2TextBox2);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(txtReferenceNo);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
@@ -166,38 +160,9 @@
             panel2.Size = new Size(615, 101);
             panel2.TabIndex = 9;
             // 
-            // guna2TextBox2
-            // 
-            guna2TextBox2.CustomizableEdges = customizableEdges7;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Font = new Font("Segoe UI", 9F);
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(453, 63);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PlaceholderText = "";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2TextBox2.Size = new Size(149, 26);
-            guna2TextBox2.TabIndex = 12;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Roboto Slab", 14.25F);
-            label3.Location = new Point(331, 63);
-            label3.Name = "label3";
-            label3.Size = new Size(120, 26);
-            label3.TabIndex = 11;
-            label3.Text = "Handled By:";
-            // 
             // txtReferenceNo
             // 
-            txtReferenceNo.CustomizableEdges = customizableEdges9;
+            txtReferenceNo.CustomizableEdges = customizableEdges7;
             txtReferenceNo.DefaultText = "";
             txtReferenceNo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtReferenceNo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -210,7 +175,7 @@
             txtReferenceNo.Name = "txtReferenceNo";
             txtReferenceNo.PlaceholderText = "";
             txtReferenceNo.SelectedText = "";
-            txtReferenceNo.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtReferenceNo.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtReferenceNo.Size = new Size(171, 26);
             txtReferenceNo.TabIndex = 10;
             // 
@@ -227,7 +192,7 @@
             // btnTransaction
             // 
             btnTransaction.BorderRadius = 10;
-            btnTransaction.CustomizableEdges = customizableEdges11;
+            btnTransaction.CustomizableEdges = customizableEdges9;
             btnTransaction.DisabledState.BorderColor = Color.DarkGray;
             btnTransaction.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTransaction.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -237,7 +202,7 @@
             btnTransaction.ForeColor = Color.White;
             btnTransaction.Location = new Point(422, 10);
             btnTransaction.Name = "btnTransaction";
-            btnTransaction.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnTransaction.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnTransaction.Size = new Size(180, 36);
             btnTransaction.TabIndex = 14;
             btnTransaction.Text = "Add Product";
@@ -276,7 +241,7 @@
             // 
             // btnSave
             // 
-            btnSave.CustomizableEdges = customizableEdges13;
+            btnSave.CustomizableEdges = customizableEdges11;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -286,7 +251,7 @@
             btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(524, 74);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnSave.Size = new Size(78, 26);
             btnSave.TabIndex = 21;
             btnSave.Text = "Save";
@@ -376,8 +341,6 @@
         private Panel panel2;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtReferenceNo;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Label label3;
         private Guna.UI2.WinForms.Guna2Button btnTransaction;
         private Label label4;
         private Panel panel3;
